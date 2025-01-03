@@ -9,7 +9,7 @@ title:
 
 [comment]: # "This is the standard layout for the project, but you can clean this and use your own template"
 
-# Project Title
+# Colorization of Grayscale Images Using Classical Image Processing Techniques
 
 ---
 
@@ -20,9 +20,11 @@ This is a sample image, to show how to add images to your page. To learn more op
  -->
 
 ## Team
--  eNumber, Name, [email](mailto:name@email.com)
--  eNumber, Name, [email](mailto:name@email.com)
--  eNumber, Name, [email](mailto:name@email.com)
+-  E/20/024, Buddika Ariyarathna, [email](e20024@eng.pdn.ac.lk)
+-  E/20/254, Kavindu Methpura, [email](e20254@eng.pdn.ac.lk)
+-  E/20/366, Bhagya Senavirathna, [email](e20366@eng.pdn.ac.lk)
+-  E/20/378, Buddika Ariyarathna, [email](e20378@eng.pdn.ac.lk)
+-  E/20/420, Kavindu Methpura, [email](e20420@eng.pdn.ac.lk)
 
 ## Table of Contents
 1. [Introduction](#introduction)
