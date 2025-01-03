@@ -1,30 +1,43 @@
 {
+    "title": "Colorization of Grayscale Images Using Classical Image Processing Techniques",
     "team": [
         {
-            "name": "Team Member Name 1",
-            "email": "email@eng.pdn.ac.lk",
-            "eNumber": "E/yy/xxx"
+            "name": "Buddika Ariyarathna",
+            "email": "e20024@eng.pdn.ac.lk",
+            "eNumber": "E/20/024"
         },
         {
-            "name": "Team Member Name 2",
-            "email": "email@eng.pdn.ac.lk",
-            "eNumber": "E/yy/xxx"
+            "name": "Kavindu Methpura",
+            "email": "e20254@eng.pdn.ac.lk",
+            "eNumber": "E/20/254"
         },
         {
-            "name": "Team Member Name 3",
-            "email": "email@eng.pdn.ac.lk",
-            "eNumber": "E/yy/xxx"
+            "name": "Bhagya Senavirathna",
+            "email": "e20366@eng.pdn.ac.lk",
+            "eNumber": "E/20/366"
+        },
+        {
+            "name": "Amanda Siriwardane",
+            "email": "e20378@eng.pdn.ac.lk",
+            "eNumber": "E/20/378"
+        },
+        {
+            "name": "Janith Wanasinghe",
+            "email": "e20420@eng.pdn.ac.lk",
+            "eNumber": "E/20/420"
         }
     ],
     "supervisors": [
         {
-            "name": "Dr. Supervisor 1",
-            "email": "email@eng.pdn.ac.lk"
-        },
-        {
-            "name": "Supervisor 2",
-            "email": "email@eng.pdn.ac.lk"
+            "name": "Dr. Upul Jayasinghe",
+            "email": "upuljm@eng.pdn.ac.lk"
         }
     ],
-    "tags": []
+    "tags": [
+        "Image Processing",
+        "Colorization",
+        "Grayscale Images",
+        "Computer Vision",
+        "Digital Restoration"
+    ]
 }
