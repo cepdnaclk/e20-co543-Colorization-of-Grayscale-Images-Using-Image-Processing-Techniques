@@ -1,0 +1,35 @@
+name: "CodeQL Analysis"
+
+on:
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+  analyze:
+    name: Analyze code with CodeQL
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up CodeQL
+        uses: github/codeql-action/setup@v2
+        with:
+          languages: python  # You can add more languages if your repository uses them
+
+      - name: Initialize CodeQL database
+        run: |
+          codeql database init --language=python
+
+      - name: Analyze with CodeQL
+        run: |
+          codeql database analyze --format=sarif-latest --output=codeql-results.sarif
+
+      - name: Upload CodeQL results
+        uses: github/codeql-action/upload-artifact@v2
+        with:
+          name: codeql-results
+          path: codeql-results.sarif
