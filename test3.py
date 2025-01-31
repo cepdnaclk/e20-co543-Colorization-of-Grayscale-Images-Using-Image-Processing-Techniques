@@ -56,7 +56,8 @@ def plot_results(filename, original, gray, edges, fourier, colorized):
     plt.show()
 
 # Define dataset path
-dataset_path = "D:/Academic/CO543 - Image Processing/e20-co543-Colorization-of-Grayscale-Images-Using-Image-Processing-Techniques/datasets/test/original"
+dataset_path = r"C:\Users\DELL\Documents\sem5\CO543\mini project\e20-co543-Colorization-of-Grayscale-Images-Using-Image-Processing-Techniques\datasets\test\cartoon"
+#dataset_path = "C:\Users\DELL\Documents\sem5\CO543\mini project\e20-co543-Colorization-of-Grayscale-Images-Using-Image-Processing-Techniques\datasets\test\original"
 
 # Load images
 image_pairs = load_images(dataset_path)

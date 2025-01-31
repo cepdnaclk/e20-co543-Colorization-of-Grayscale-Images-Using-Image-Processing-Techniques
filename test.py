@@ -13,7 +13,7 @@ def load_images(folder):
     return images
 
 # Example usage
-dataset_path = "D:/Academic/CO543 - Image Processing/e20-co543-Colorization-of-Grayscale-Images-Using-Image-Processing-Techniques/datasets/test/original"
+dataset_path = "C:\Users\DELL\Documents\sem5\CO543\mini project\e20-co543-Colorization-of-Grayscale-Images-Using-Image-Processing-Techniques\datasets\test\original"
 image_pairs = load_images(dataset_path)
 
 
