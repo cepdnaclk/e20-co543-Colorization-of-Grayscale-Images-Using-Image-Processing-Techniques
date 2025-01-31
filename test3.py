@@ -33,41 +33,44 @@ def apply_color_mapping(image):
     colored = cv2.applyColorMap(image, cv2.COLORMAP_JET)  # Example colormap
     return colored
 
-# Display results in a single figure
-def plot_results(filename, original, gray, edges, fourier, colorized):
-    fig, axes = plt.subplots(1, 5, figsize=(15, 5))  # 1 row, 5 columns
+# Display all results in a single figure
+def plot_all_results(image_pairs):
+    n = len(image_pairs)
+    fig, axes = plt.subplots(n, 5, figsize=(15, 5 * n))  # Adjust rows according to the number of images
     
-    # Convert BGR to RGB for Matplotlib
-    original_rgb = cv2.cvtColor(original, cv2.COLOR_BGR2RGB)
-    colorized_rgb = cv2.cvtColor(colorized, cv2.COLOR_BGR2RGB)
+    # Loop over all images
+    for i, (filename, gray, original) in enumerate(image_pairs):
+        edges = edge_detection(gray)
+        fourier = apply_fourier_transform(gray)
+        colorized = apply_color_mapping(gray)
+        
+        # Convert images for displaying in Matplotlib
+        original_rgb = cv2.cvtColor(original, cv2.COLOR_BGR2RGB)
+        colorized_rgb = cv2.cvtColor(colorized, cv2.COLOR_BGR2RGB)
+        
+        # Titles and images
+        titles = ['Original Image', 'Grayscale Image', 'Edge Detection', 'Fourier Transform', 'Colorized Image']
+        images = [original_rgb, gray, edges, fourier, colorized_rgb]
+        
+        for j, (ax, img, title) in enumerate(zip(axes[i], images, titles)):
+            ax.imshow(img, cmap='gray' if len(img.shape) == 2 else None)  # Use grayscale for single-channel images
+            ax.set_title(title)
+            ax.axis('off')  # Hide axes
+        
+        # Set the main title for the row
+        axes[i, 0].set_ylabel(f"Processing Results for {filename}", fontsize=12, rotation=0, labelpad=20)
     
-    # Titles and images
-    titles = ['Original Image', 'Grayscale Image', 'Edge Detection', 'Fourier Transform', 'Colorized Image']
-    images = [original_rgb, gray, edges, fourier, colorized_rgb]
-    
-    for ax, img, title in zip(axes, images, titles):
-        ax.imshow(img, cmap='gray' if len(img.shape) == 2 else None)  # Use grayscale for single-channel images
-        ax.set_title(title)
-        ax.axis('off')  # Hide axes
-    
-    # Set main title
-    plt.suptitle(f"Processing Results for {filename}", fontsize=14)
     plt.tight_layout()
     plt.show()
 
 # Define dataset path
-dataset_path = "D:/Academic/CO543 - Image Processing/e20-co543-Colorization-of-Grayscale-Images-Using-Image-Processing-Techniques/datasets/test/original"
+dataset_path = "datasets/Flowers_Test/Original"
 
 # Load images
 image_pairs = load_images(dataset_path)
 
-# Process each image
+# Process and plot all images at once
 if not image_pairs:
     print("Error: No valid images found in the dataset folder.")
 else:
-    for filename, gray_image, original_image in image_pairs:
-        edges = edge_detection(gray_image)
-        fourier_image = apply_fourier_transform(gray_image)
-        colorized_image = apply_color_mapping(gray_image)
-        
-        plot_results(filename, original_image, gray_image, edges, fourier_image, colorized_image)
+    plot_all_results(image_pairs)
