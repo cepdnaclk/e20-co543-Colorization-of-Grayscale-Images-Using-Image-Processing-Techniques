@@ -28,6 +28,10 @@ def enhance_contrast(image, method="CLAHE"):
         return cv2.equalizeHist(image)
     else:
         return image  # Return original if no method is specified
+# Example usage
+dataset_path = "C:\Users\DELL\Documents\sem5\CO543\mini project\e20-co543-Colorization-of-Grayscale-Images-Using-Image-Processing-Techniques\datasets\test\original"
+image_pairs = load_images(dataset_path)
+
 
 # Edge detection with adaptive smoothing
 def edge_detection(image):
