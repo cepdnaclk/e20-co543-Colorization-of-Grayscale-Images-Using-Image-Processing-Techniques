@@ -65,6 +65,8 @@ def plot_all_results(image_pairs):
 
 # Define dataset path
 dataset_path = "datasets/Flowers_Test/Original"
+#dataset_path = r"C:\Users\DELL\Documents\sem5\CO543\mini project\e20-co543-Colorization-of-Grayscale-Images-Using-Image-Processing-Techniques\datasets\test\cartoon"
+#dataset_path = "C:\Users\DELL\Documents\sem5\CO543\mini project\e20-co543-Colorization-of-Grayscale-Images-Using-Image-Processing-Techniques\datasets\test\original"
 
 # Load images
 image_pairs = load_images(dataset_path)
