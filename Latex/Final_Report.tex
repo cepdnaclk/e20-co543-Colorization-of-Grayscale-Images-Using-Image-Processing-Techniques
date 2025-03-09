@@ -49,13 +49,13 @@ e20024@eng.pdn.ac.lk}
 Sri Lanka \\
 e20254@eng.pdn.ac.lk}
 \and
-\IEEEauthorblockN{Amanda Senavirathna}
+\IEEEauthorblockN{Bhagya Senavirathna}
 \IEEEauthorblockA{\textit{Department of Computer Engineering} \\
 \textit{University of Peradeniya} \\
 Sri Lanka \\
 e20366@eng.pdn.ac.lk}
 \newlineauthors
-\IEEEauthorblockN{Bhagya Siriwardane}
+\IEEEauthorblockN{Amanda Siriwardane}
 \IEEEauthorblockA{\textit{Department of Computer Engineering} \\
 \textit{University of Peradeniya} \\
 Sri Lanka \\
@@ -332,8 +332,8 @@ The average range of evaluation metrics on the validation set are summarized in 
 \begin{tabular}{|p{2.5cm}|c|c|p{3.3cm}|}  % Adjust column widths
 \hline
 \textbf{Method} & \textbf{PSNR} & \textbf{SSIM} & \textbf{Observations} \\ \hline
-Intensity-Based (Manual) Color Mapping & 5 - 7 & 0.01 - 0.3 & Limited color diversity \\ \hline
-Custom Color Mapping & 4 - 10 & -0.05 - 0.45 & Better structure preservation relative to Manual Mapping \\ \hline
+Intensity-Based Color Mapping & 5 - 7 & 0.01 - 0.3 & Limited color diversity \\ \hline
+Custom Color Mapping & 4 - 10 & -0.05 - 0.45 & Better structure preservation relative to Intensity based Mapping \\ \hline
 OpenCV Color Mapping & 4 - 9 & 0.4 - 0.6 & Better structure preservation relative to Custom Mapping \\ \hline
 CNN Fine-Tuned & \textbf{23.14} & \textbf{0.93} & Most realistic colorization \\ \hline
 \end{tabular}
@@ -493,7 +493,7 @@ The above findings can be observed when two sample images are loaded upon the me
     \subcaptionbox{Custom Color Map for Sample 1\label{subfig:Custom_Color_Map_OP1}}{
         \includegraphics[width=0.29\linewidth]{Custom_Color_Map_OP1.jpg}
     }
-    \subcaptionbox{Manual Color Map For Sample 1\label{subfig:Manual_Color_Map_OP1}}{
+    \subcaptionbox{Intensity Based Color Map For Sample 1\label{subfig:Manual_Color_Map_OP1}}{
         \includegraphics[width=0.29\linewidth]{Manual_Color_Map_OP1.jpg}
     }
     \subcaptionbox{OpenCV Color Map For Sample 1\label{subfig:OpenCV_Color_Map_OP1}}{
@@ -517,7 +517,7 @@ The above findings can be observed when two sample images are loaded upon the me
     \subcaptionbox{Custom Color Map For Sample 2\label{subfig:Custom_Color_Map_OP2}}{
         \includegraphics[width=0.29\linewidth]{Custom_Color_Map_OP2.jpg}
     }
-    \subcaptionbox{Manual Color Map For Sample 2\label{subfig:Manual_Color_Map_OP2}}{
+    \subcaptionbox{Intensity Color Map For Sample 2\label{subfig:Manual_Color_Map_OP2}}{
         \includegraphics[width=0.29\linewidth]{Manual_Color_Map_OP2.jpg}
     }
     \subcaptionbox{OpenCV Color Map For Sample 2\label{subfig:OpenCV_Color_Map_OP2}}{
