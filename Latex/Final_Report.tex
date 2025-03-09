@@ -290,7 +290,7 @@ For each batch:
  \section{Experiment}
 \subsection{Experimental Setup}
 \begin{itemize}
-\item \textbf{Dataset:} A diverse collection of grayscale and color image pairs As shown in Fig. \ref{fig:dataset_samples}
+\item \textbf{Dataset:} A diverse collection of grayscale and color image pairs as shown in Fig. \ref{fig:dataset_samples}
 
 \begin{figure}[b]
     \centering
@@ -315,17 +315,17 @@ For each batch:
 \item \textbf{Evaluation Metrics:}
 During the first milestone, the color mapping techniques mentioned in the \ref{sec:Classical_techniques} were done. The three methods had different PSNR, SSIM values as mentioned in the Table~\ref{table:metrics_results}.
 
-In the CNN implementation the model is trained for $20$ and $30$ epochs using the Adam optimizer with a learning rate of $0.001$. Mean Squared Error (MSE) is used as the primary loss function, and the model is evaluated using the following metrics:
+In CNN implementation the model is trained for $20$ and $30$ epochs using the Adam optimizer with a learning rate of $0.001$. Mean Squared Error (MSE) is used as the primary loss function, and the model is evaluated using the following metrics:
 \begin{itemize}
-    \item \textbf{MSE}: The pixel-wise difference between predicted and ground truth images is measured.
+    \item \textbf{MSE}: The pixel-wise difference between predicted and ground-truth images is measured.
     \item \textbf{PSNR}: The quality of the predicted images relative to the ground truth is indicated.
-    \item \textbf{SSIM}: The structural similarity between predicted and ground truth images is measured.
+    \item \textbf{SSIM}: The structural similarity between predicted and ground-truth images is measured.
     \item \textbf{R²}: How well the predicted colors match the ground truth is measured.
 \end{itemize}
 \end{itemize}
 The evaluation metrics on the validation set are summarized in Table~\ref{table:metrics_results}.
 
-\begin{table}[h]
+\begin{table}[t]
 \centering
 \renewcommand{\arraystretch}{1.1} % Adjust row height
 \setlength{\tabcolsep}{2pt} % Reduce column spacing
