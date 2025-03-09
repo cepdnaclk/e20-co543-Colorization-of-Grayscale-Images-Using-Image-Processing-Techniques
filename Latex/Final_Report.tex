@@ -317,29 +317,30 @@ During the first milestone, the color mapping techniques mentioned in the \ref{s
 
 In CNN implementation the model is trained for $20$ and $30$ epochs using the Adam optimizer with a learning rate of $0.001$. Mean Squared Error (MSE) is used as the primary loss function, and the model is evaluated using the following metrics:
 \begin{itemize}
-    \item \textbf{MSE}: The pixel-wise difference between predicted and ground-truth images is measured.
+    \item \textbf{MSE}: The pixel-wise difference between predicted and ground-truth images is measured. (Used for CNN Model Only)
     \item \textbf{PSNR}: The quality of the predicted images relative to the ground truth is indicated.
     \item \textbf{SSIM}: The structural similarity between predicted and ground-truth images is measured.
-    \item \textbf{R²}: How well the predicted colors match the ground truth is measured.
+    \item \textbf{R²}: How well the predicted colors match the ground truth is measured. (Used for CNN Model Only)
 \end{itemize}
 \end{itemize}
-The evaluation metrics on the validation set are summarized in Table~\ref{table:metrics_results}.
+The average range of evaluation metrics on the validation set are summarized in Table~\ref{table:metrics_results}.
 
 \begin{table}[t]
 \centering
 \renewcommand{\arraystretch}{1.1} % Adjust row height
-\setlength{\tabcolsep}{2pt} % Reduce column spacing
-\begin{tabular}{|c|c|c|p{2.8cm}|}  % Adjust last column width
+\setlength{\tabcolsep}{4pt} % Adjust column spacing
+\begin{tabular}{|p{2.5cm}|c|c|p{3.3cm}|}  % Adjust column widths
 \hline
 \textbf{Method} & \textbf{PSNR} & \textbf{SSIM} & \textbf{Observations} \\ \hline
-Custom Color Mapping & 18.5 & 0.62 & Limited color diversity \\ \hline
-Intensity Based Color Mapping & 19.3 & 0.65 & Better structure preservation \\ \hline
-OpenCV Color Mapping & 19.3 & 0.65 & Better structure preservation \\ \hline
+Intensity-Based (Manual) Color Mapping & 5 - 7 & 0.01 - 0.3 & Limited color diversity \\ \hline
+Custom Color Mapping & 4 - 10 & -0.05 - 0.45 & Better structure preservation relative to Manual Mapping \\ \hline
+OpenCV Color Mapping & 4 - 9 & 0.4 - 0.6 & Better structure preservation relative to Custom Mapping \\ \hline
 CNN Fine-Tuned & \textbf{23.14} & \textbf{0.93} & Most realistic colorization \\ \hline
 \end{tabular}
 \caption{Comparison of Colorization Techniques}
 \label{table:metrics_results}
 \end{table}
+
 
 \subsection{Enhancement}
 Strong performance is achieved by the model on the validation set, as evidenced by the quantitative metrics and qualitative results. However, some limitations are observed:
@@ -476,6 +477,58 @@ For the CNN Approach, example results of the model's predictions before and afte
 \item CNN-based models significantly improve realism by leveraging learned color distributions.
 \item Combining classical preprocessing with CNN training yields superior results.
 \end{itemize}
+
+The above findings can be observed when two sample images are loaded upon the methods as in Figure~\ref{fig:colorization_op1} and Figure~\ref{fig:colorization_op2}
+
+\begin{figure}[t]
+    \centering
+    % CNN Output in a single row
+    \subcaptionbox{CNN Approach for Sample 1\label{subfig:CNN_OP1}}{
+        \includegraphics[width=\linewidth]{CNN_OP1.png}
+    }
+    
+    \vspace{0.1cm} % Space between rows
+
+    % Second row - Other three methods
+    \subcaptionbox{Custom Color Map for Sample 1\label{subfig:Custom_Color_Map_OP1}}{
+        \includegraphics[width=0.29\linewidth]{Custom_Color_Map_OP1.jpg}
+    }
+    \subcaptionbox{Manual Color Map For Sample 1\label{subfig:Manual_Color_Map_OP1}}{
+        \includegraphics[width=0.29\linewidth]{Manual_Color_Map_OP1.jpg}
+    }
+    \subcaptionbox{OpenCV Color Map For Sample 1\label{subfig:OpenCV_Color_Map_OP1}}{
+        \includegraphics[width=0.29\linewidth]{OpenCV_Color_Map_OP1.jpg}
+    }
+
+    \caption{Comparison of different colorization methods for Sample 1}
+    \label{fig:colorization_op1}
+\end{figure}
+
+\begin{figure}[b]
+    \centering
+    % CNN Output in a single row
+    \subcaptionbox{CNN Approach for Sample 2\label{subfig:CNN_OP2}}{
+        \includegraphics[width=\linewidth]{CNN_OP2.png}
+    }
+    
+    \vspace{0.1cm} % Space between rows
+
+    % Second row - Other three methods
+    \subcaptionbox{Custom Color Map For Sample 2\label{subfig:Custom_Color_Map_OP2}}{
+        \includegraphics[width=0.29\linewidth]{Custom_Color_Map_OP2.jpg}
+    }
+    \subcaptionbox{Manual Color Map For Sample 2\label{subfig:Manual_Color_Map_OP2}}{
+        \includegraphics[width=0.29\linewidth]{Manual_Color_Map_OP2.jpg}
+    }
+    \subcaptionbox{OpenCV Color Map For Sample 2\label{subfig:OpenCV_Color_Map_OP2}}{
+        \includegraphics[width=0.29\linewidth]{OpenCV_Color_Map_OP2.jpg}
+    }
+
+    \caption{Comparison of different colorization methods for Sample 2.}
+    \label{fig:colorization_op2}
+\end{figure}
+
+
 
 \subsection{Future Work}
 \begin{itemize}
